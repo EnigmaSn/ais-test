@@ -1,0 +1,139 @@
+.page-header {
+}
+.main-nav {
+  background-color: $blue;
+  min-height: 50px;
+}
+.main-nav__wrapper {
+  @include container;
+  @include side-padding;
+  position: relative;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: none;
+      flex-direction: column;
+      padding-top: 40px;
+      padding-left: 50px;
+      padding-bottom: 15px;
+    }
+    .main-nav__close--show {
+      display: flex;
+    }
+    li {
+      margin: 8px;
+      padding: 0;
+      list-style: none;
+        ul {
+          display: none;
+        }
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out 0s;
+    }
+    a:hover {
+      color: $orange;
+      transition: all 0.2s ease-in-out 0s;
+    }
+    .current {
+      color: $orange;
+      pointer-events: none;
+    }
+    .current:hover {
+      //color: $white;
+      cursor: default;
+    }
+}
+.main-nav__open {
+  position: absolute;
+  right: 20%;
+  top: 13px;
+}
+
+.page-header__wrapper {
+  position: relative;
+  @include container;
+  display: flex;
+  flex-direction: column;
+    div:first-child {
+      margin: 0 auto;
+    }
+    div:last-child {
+      margin: 0 auto;
+      // margin-top: 30px;
+    }
+    .page-header__logo {
+      img {
+        margin-top: 5px;
+        margin-left: 25px;
+      }
+    }
+    .page-header__contact {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+    span {
+      display: block;
+      color: #3c81b9;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+    .page-header__phone {
+      margin: 0 auto;
+      color: black;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: all 0.2s ease-in-out 0s;
+    }
+    .page-header__phone:hover {
+      color: $gray;
+      transition: all 0.2s ease-in-out 0s;
+    }
+    .page-header__social {
+      margin: 0 auto;
+      font-size: 0;
+      // margin-top: 20px;
+      margin-bottom: 20px;
+        a {
+          padding-right: 10px;
+        }
+    }
+    .page-header__callback {
+      padding-bottom: 25px;
+
+    }
+}
+
+@media #{$desktop-widths} {
+  .main-nav__wrapper {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-top: 10px;
+    }
+  }
+  .page-header__wrapper {
+    flex-direction: row;
+    .page-header__logo {
+      img {
+        margin-top: 20px;
+        margin-left: 25px;
+      }
+    }
+    .page-header__contact {
+      padding-top: 20px;
+    }
+    .page-header__callback {
+      padding-top: 60px;
+    }
+  }
+  .main-nav__open {
+    display: none;
+  }
+}
